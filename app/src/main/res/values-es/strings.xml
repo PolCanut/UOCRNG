@@ -1,0 +1,27 @@
+<resources>
+    <string name="unmute">Desenmudecer</string>
+    <string name="mute">Enmudecer</string>
+    <string name="exit">Salir</string>
+    <string name="change_music">Cambiar música</string>
+    <string name="game_result">Resultado de la partida</string>
+    <string name="notifications_permission_denied_message">Las notifications de victoria no se mostrarán</string>
+    <string name="help">Ayuda</string>
+    <string name="win_in">Victoria en %1$d turnos</string>
+    <string name="defeat_in">Derrota en %1$d turnos</string>
+    <string name="coins">Monedas</string>
+    <string name="location_permission_denied_message">Permiso de ubicación necesario para guardar la ubicación tras cada partida</string>
+    <string name="play">Jugar</string>
+    <string name="history">Historial</string>
+    <string name="empty_history">Historial vacío!</string>
+    <string name="save_game_image">Guarda imagen del resultado</string>
+    <string name="add_victory_to_calendar">Añade la victoria al calendario</string>
+    <string name="player">Jugador</string>
+    <string name="cpu">CPU</string>
+    <string name="current_number">Cifra actual</string>
+    <string name="generate_number">Generar nueva cifra</string>
+    <string name="saved_screenshot">Captura de pantalla guardada</string>
+    <string name="save_screenshot_error">Algo falló guardando la captura</string>
+    <string name="default_music">Usar música por defecto</string>
+    <string name="victory">¡Victoria!</string>
+    <string name="turn_of">Turno de</string>
+</resources>

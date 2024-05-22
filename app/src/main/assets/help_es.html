@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sección de Ayuda - Nombre del Juego</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        h1 {
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #007bff;
+            border-bottom: 1px solid #007bff;
+            padding-bottom: 5px;
+            font-size: 24px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        h3 {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+        p {
+            color: #555;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        ul, ol {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        ul li, ol li {
+            margin-bottom: 5px;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 24px;
+            }
+            h2 {
+                font-size: 20px;
+            }
+            h3 {
+                font-size: 18px;
+            }
+            p {
+                font-size: 14px;
+            }
+            ul, ol {
+                margin-left: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sección de Ayuda</h1>
+
+        <div class="section">
+            <h2>Introducción</h2>
+            <p>¡Bienvenido a Deathroll - RNG! Este emocionante juego de apuestas 1vs1 contra la máquina el cual desafías tu suerte. Tu objetivo es acumular la mayor cantidad de monedas posible mientras evitas obtener el número 1.</p>
+            
+            <h2>Resumen del Juego</h2>
+            <p>Comienzas con 50 monedas. En cada partida apuestas 10 monedas. El juego se basa en generar números aleatorios, con el rango de números disponibles reduciéndose en cada turno. El jugador que obtenga el número 1 pierde la partida.</p>
+        </div>
+
+        <div class="section">
+            <h2>Guía de Inicio Rápido</h2>
+            <h3>Cómo Empezar</h3>
+            <ol>
+                <li>Descarga y abre el juego.</li>
+                <li>Inicia una partida: Presiona el botón de "Jugar" para comenzar.</li>
+                <li>Apuesta inicial: Cada partida tiene una apuesta fija de 10 monedas.</li>
+            </ol>
+            
+            <h3>Primeros Pasos</h3>
+            <p><strong>Turno inicial:</strong> Presiona el botón para generar un número aleatorio entre 1 y 100.</p>
+            <p><strong>Turnos subsecuentes:</strong> Cada número generado reduce el rango máximo para el siguiente turno.</p>
+            <p><strong>Objetivo:</strong> Evitar obtener el número 1 y tratar de que la máquina lo reciba.</p>
+        </div>
+
+        <div class="section">
+            <h2>Controles del Juego</h2>
+            <h3>Controles Básicos</h3>
+            <p><strong>Botón de Generar Número:</strong> Pulsa este botón para generar un número aleatorio dentro del rango disponible en tu turno.</p>
+        </div>
+
+        <div class="section">
+            <h2>Mecánicas del Juego</h2>
+            <h3>Objetivos del Juego</h3>
+            <p>El objetivo es acumular la mayor cantidad de monedas posibles mientras evitas obtener el número 1. Las partidas se juegan alternadamente entre tú y la máquina.</p>
+            
+            <h3>Reglas y Normas</h3>
+            <ul>
+                <li><strong>Inicio de Partida:</strong> La partida comienza con un rango de números del 1 al 100.</li>
+                <li><strong>Reducción de Rango:</strong> Si en tu turno generas el número 50, el siguiente turno tendrá un rango de 1 a 49. Así sucesivamente.</li>
+                <li><strong>Final de Partida:</strong> La partida termina cuando uno de los jugadores obtiene el número 1.</li>
+                <li><strong>Monedas:</strong> Ganas 10 monedas si evitas el número 1 y la máquina lo obtiene. Pierdes 10 monedas si tú obtienes el número 1.</li>
+            </ul>
+            
+            <h3>Ejemplo de Juego</h3>
+            <p><strong>Primer turno:</strong> Generas un 50. El rango del siguiente turno será de 1 a 49.</p>
+            <p><strong>Segundo turno (máquina):</strong> La máquina genera un 30. El rango del siguiente turno será de 1 a 29.</p>
+            <p><strong>Tercer turno:</strong> Generas un 15. El rango del siguiente turno será de 1 a 14.</p>
+            <p><strong>Cuarto turno (máquina):</strong> La máquina genera un 8. El rango del siguiente turno será de 1 a 7.</p>
+            <p>Continúa hasta que uno de los jugadores genere el número 1.</p>
+        </div>
+
+        <div class="section">
+            <h2>Preguntas Frecuentes (FAQ)</h2>
+            <h3>Problemas Comunes</h3>
+            <p><strong>¿Qué pasa si me quedo sin monedas?</strong> Puedes seguir jugando con saldo negativo, pero el reto será remontar a positivo.</p>
+            <p><strong>¿Cómo se calcula el número aleatorio?</strong> El número se genera de forma completamente aleatoria dentro del rango permitido en cada turno.</p>
+        </div>
+
+        <div class="section">
+            <h2>Problemas Técnicos</h2>
+            <h3>Resolución de Problemas</h3>
+            <p><strong>Problemas de Conexión:</strong> Asegúrate de tener una conexión a Internet estable.</p>
+            <p><strong>Errores del Juego:</strong> Reinicia el juego si encuentras algún error. Si persiste, contacta con el soporte técnico.</p>
+            
+            <h3>Compatibilidad</h3>
+            <p><strong>Dispositivos Compatibles:</strong> Este juego es compatible con dispositivos Android 5.0 y superiores.</p>
+        </div>
+
+        <div class="section">
+            <h2>Contacto y Soporte</h2>
+            <h3>Asistencia Directa</h3>
+            <p><strong>Soporte Técnico:</strong> Para asistencia, contacta a nuestro equipo de soporte en <a href="rng@uoc.edu">rng@uoc.edu</a>.</p>
+        </div>
+            
+        <div class="section">
+            <h2>Términos y Condiciones</h2>
+            <h3>Política de Privacidad</h3>
+            <p><strong>Privacidad:</strong> Respetamos tu privacidad y no compartimos tus datos con terceros sin tu consentimiento.</p>
+            
+            <h3>Términos de Uso</h3>
+            <p><strong>Condiciones:</strong> Al jugar, aceptas nuestros términos y condiciones disponibles en <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">[link a términos]</a>.</p>
+        </div>
+
+        <div class="section">
+            <h2>Feedback del Jugador</h2>
+            <h3>Enviar Sugerencias</h3>
+            <p><strong>Comentarios:</strong> Envíanos tus sugerencias y comentarios a través del juego o en <a href="rng@uoc.edu">rng@uoc.edu</a>.</p>
+        </div>
+    </div>
+</body>
+</html>

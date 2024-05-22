@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name" translatable="false">RNG2</string>
+    <string name="unmute">Unmute</string>
+    <string name="mute">Mute</string>
+    <string name="exit">Exit</string>
+    <string name="change_music">Change music</string>
+    <string name="game_result">Game result</string>
+    <string name="notifications_permission_denied_message">Game victory notifications won\'t be displayed</string>
+    <string name="help">Help</string>
+    <string name="win_in">Victory in %1$d turns</string>
+    <string name="defeat_in">Defeat in %1$d turns</string>
+    <string name="coins">Coins</string>
+    <string name="location_permission_denied_message">Location permission is required to save your location in every game</string>
+    <string name="play">Play</string>
+    <string name="history">History</string>
+    <string name="empty_history">Empty history!</string>
+    <string name="save_game_image">Save game result image</string>
+    <string name="add_victory_to_calendar">Add victory to the calendar</string>
+    <string name="player">Player</string>
+    <string name="cpu">CPU</string>
+    <string name="current_number">Current number</string>
+    <string name="generate_number">Generate number</string>
+    <string name="saved_screenshot">Saved screenshot</string>
+    <string name="save_screenshot_error">Something went wrong saving the screenshot</string>
+    <string name="default_music">Use default music</string>
+    <string name="victory">Victory!</string>
+    <string name="turn_of">Turn of</string>
+</resources>
