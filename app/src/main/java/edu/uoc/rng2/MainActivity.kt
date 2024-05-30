@@ -39,6 +39,7 @@ import edu.uoc.rng2.ui.screens.gameresult.GameResult
 import edu.uoc.rng2.ui.screens.gameresult.GameResultViewModel
 import edu.uoc.rng2.ui.screens.history.History
 import edu.uoc.rng2.ui.screens.history.HistoryViewModel
+import edu.uoc.rng2.ui.screens.sync.SyncViewModel
 import edu.uoc.rng2.ui.screens.welcome.Welcome
 import edu.uoc.rng2.ui.screens.welcome.WelcomeViewModel
 import edu.uoc.rng2.ui.theme.RNG2Theme
@@ -47,7 +48,6 @@ import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import java.util.Calendar
 import javax.inject.Inject
-
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
@@ -58,7 +58,8 @@ class MainActivity : ComponentActivity() {
     @Inject
     lateinit var playbackMediaController: PlaybackMediaController
 
-    private val viewModel by viewModels<MainActivityViewModel>()
+    private val mainViewModel by viewModels<MainActivityViewModel>()
+    private val syncViewModel by viewModels<SyncViewModel>()
 
     private var screenshotToStore: Bitmap? = null
 
@@ -78,10 +79,13 @@ class MainActivity : ComponentActivity() {
         }
 
         lifecycleScope.launch {
-            viewModel.currentSong.collectLatest {
+            mainViewModel.currentSong.collectLatest {
                 playbackMediaController.playMedia(it.uri)
             }
         }
+
+        // Iniciar sincronización de datos
+        syncViewModel.syncData()
     }
 
     private fun gameIdFromIntent(): Long? {
@@ -100,8 +104,7 @@ class MainActivity : ComponentActivity() {
 
         NavHost(navController, startDestination = WELCOME_SCREEN) {
             composable(WELCOME_SCREEN) {
-                val viewModel =
-                    hiltViewModel<WelcomeViewModel>() // Obtiene el ViewModel para la pantalla de bienvenida
+                val viewModel = hiltViewModel<WelcomeViewModel>() // Obtiene el ViewModel para la pantalla de bienvenida
 
                 Welcome(
                     viewModel = viewModel,
@@ -113,20 +116,18 @@ class MainActivity : ComponentActivity() {
                 )
             }
             composable(HISTORY_SCREEN) {
-                val viewModel =
-                    hiltViewModel<HistoryViewModel>() // Obtiene el ViewModel para la pantalla de historial
+                val viewModel = hiltViewModel<HistoryViewModel>() // Obtiene el ViewModel para la pantalla de historial
 
-                History(onBack = { navController.popBackStack() }, // Regresa atrás en la pila de navegación
-                    viewModel = viewModel, onGameResultClick = {
-                        navigateToGameResult(
-                            navController, it, false
-                        )
+                History(
+                    onBack = { navController.popBackStack() }, // Regresa atrás en la pila de navegación
+                    viewModel = viewModel,
+                    onGameResultClick = {
+                        navigateToGameResult(navController, it, false)
                     } // Navega a la pantalla de resultados del juego
                 )
             }
             composable(GAME_SCREEN) {
-                val viewModel =
-                    hiltViewModel<GameViewModel>() // Obtiene el ViewModel para la pantalla de juego
+                val viewModel = hiltViewModel<GameViewModel>() // Obtiene el ViewModel para la pantalla de juego
 
                 Game(
                     viewModel,
@@ -149,10 +150,10 @@ class MainActivity : ComponentActivity() {
                     type = NavType.LongType
                 }),
             ) {
-                val viewModel =
-                    hiltViewModel<GameResultViewModel>() // Obtiene el ViewModel para la pantalla de resultados del juego
+                val viewModel = hiltViewModel<GameResultViewModel>() // Obtiene el ViewModel para la pantalla de resultados del juego
 
-                GameResult(viewModel,
+                GameResult(
+                    viewModel,
                     onAddGameResultToCalendar = { saveGameResultToCalendar(it) },
                     onSaveScreenshot = {
                         screenshotToStore = it
@@ -172,13 +173,11 @@ class MainActivity : ComponentActivity() {
 
     override fun onResume() {
         super.onResume()
-
         playbackMediaController.lifecyclePlay()
     }
 
     override fun onPause() {
         super.onPause()
-
         playbackMediaController.lifecyclePause()
     }
 
@@ -198,7 +197,7 @@ class MainActivity : ComponentActivity() {
                 // There are no request codes
                 val uri: Uri? = result.data?.data
                 if (uri != null) {
-                    viewModel.setCustomSong(uri)
+                    mainViewModel.setCustomSong(uri)
                 }
             }
         }
@@ -207,9 +206,7 @@ class MainActivity : ComponentActivity() {
         val intent = Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
             addCategory(Intent.CATEGORY_OPENABLE)
             type = "audio/mpeg"
-
         }
-
         musicChangeResultLauncher.launch(intent)
     }
 
@@ -239,7 +236,6 @@ class MainActivity : ComponentActivity() {
                 pendingPermissions.add(permissionNotification)
             }
         }
-
 
         if (checkSelfPermission(permissionFineLocation) != PackageManager.PERMISSION_GRANTED) {
             pendingPermissions.add(permissionFineLocation)
@@ -280,7 +276,6 @@ class MainActivity : ComponentActivity() {
                 ).show()
             }
         }
-
 
     private fun showSaveScreenshotPicker() {
         val intent = Intent(Intent.ACTION_CREATE_DOCUMENT).apply {

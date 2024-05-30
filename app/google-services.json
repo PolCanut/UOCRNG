@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "64041313081",
+    "project_id": "rnguoc",
+    "storage_bucket": "rnguoc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:64041313081:android:6da9101beb9228c5a97ee8",
+        "android_client_info": {
+          "package_name": "edu.uoc.rng2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDRs70EN0Q4Uk5IjUQ8plYBL4MSJC0wKeA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

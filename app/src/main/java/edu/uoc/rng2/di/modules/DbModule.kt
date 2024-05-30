@@ -9,6 +9,7 @@ import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import edu.uoc.rng2.db.AppDatabase
 import edu.uoc.rng2.db.RngDatabase
+import edu.uoc.rng2.db.SQLiteHelper
 import edu.uoc.rng2.db.dao.GameResultDao
 
 @Module
@@ -24,4 +25,9 @@ class DbModule {
 
     @Provides
     fun provideGameResultDao(db: RngDatabase): GameResultDao = db.gameResultDao()
+
+    @Provides
+    fun provideSQLiteHelper(@ApplicationContext context: Context): SQLiteHelper {
+        return SQLiteHelper(context)
+    }
 }
